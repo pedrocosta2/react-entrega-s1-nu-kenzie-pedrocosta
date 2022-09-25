@@ -91,11 +91,13 @@ li img {
 .greenCard {
   background-color: #03b898;
   width: 5px;
+  min-width: 5px;
 }
 
 .grayCard {
   width: 5px;
   background-color: #e9ecef;
+  min-width: 5px;
 }
 
 .transactionData {
