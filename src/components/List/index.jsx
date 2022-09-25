@@ -1,11 +1,11 @@
 import "./List.css";
+import deleteImg from "../../assets/trash.png";
 let AppEntriesMenu = ({ listTransactions , setListTransactions }) => {
 
 const deleteEntry = (obj) => {
 
 const newEntries = listTransactions.filter(element => element !== obj)
 
-console.log(newEntries)
 
 setListTransactions(newEntries)
 
@@ -42,7 +42,7 @@ setListTransactions(newEntries)
                   </div>
 
                   <span>R$ {element.value}</span>
-                  <button onClick={() => deleteEntry(element)}>X</button>
+                  <button onClick={() => deleteEntry(element)}> <img src={deleteImg} alt="" /></button>
                 </div>
               </li>
             ) : (
@@ -54,7 +54,7 @@ setListTransactions(newEntries)
                     <span>{element.type}</span>
                   </div>
                   <span>R$ {element.value}</span>
-                  <button onClick={() => deleteEntry(element)}> X </button>
+                  <button onClick={() => deleteEntry(element)}>  <img src={deleteImg} alt="" /></button>
                 </div>
               </li>
             )

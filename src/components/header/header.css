@@ -24,3 +24,8 @@ header button {
   border-style: none;
   background-color: #e9ecef;
 }
+
+header button:hover {
+  background-color: #343A40;
+  color: #F8F9FA;
+}
