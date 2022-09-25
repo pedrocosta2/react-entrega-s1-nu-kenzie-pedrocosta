@@ -1,0 +1,119 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+#homePage {
+  background-color: black;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#homeContent {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-around;
+  gap: 10px;
+  align-items: center;
+  height: 100%;
+}
+#homeContent h1,
+h2,
+p {
+  color: white;
+}
+
+#homeContent h1 {
+  font-size: 2.2rem;
+}
+
+#homeContent span {
+  color: #fd377e;
+}
+
+#homeImage {
+  width: 90%;
+  height: fit-content;
+  max-height: 66%;
+}
+
+#homeContent section img {
+  height: fit-content;
+  max-height: 100%;
+  width: 100%;
+}
+
+#homeDescription button {
+  background-color: #fd377e;
+  color: white;
+  height: 45px;
+  width: 50%;
+  border-radius: 8px;
+}
+
+#homeDescription {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 20px;
+}
+
+main div {
+  width: 90%;
+}
+
+@media (min-width: 769px) {
+  main {
+    align-items: flex-start;
+    flex-direction: row;
+    width: 100%;
+  }
+
+  main div {
+    width: 290px;
+  }
+
+  #homeContent {
+    margin-left: 20px;
+    margin-top: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 80px;
+    align-items: center;
+  }
+
+  #homeDescription {
+    gap: 10px;
+    width: 26%;
+  }
+  #homeDescription button {
+    margin-top: 25px;
+    width: 66%;
+  }
+
+  #homeImage {
+    width: fit-content;
+    max-height: none;
+  }
+
+  #homeImage img {
+    height: 50%;
+    width: max-content;
+    max-width: 100%;
+    max-height: 90%;
+  }
+}

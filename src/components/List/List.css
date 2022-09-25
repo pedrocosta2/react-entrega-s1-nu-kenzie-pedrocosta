@@ -1,0 +1,118 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+
+img {width: 30px; height: 30px;}
+
+section {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+}
+
+.transactionsArea {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.transactionsArea__filterButtons {
+  display: flex;
+  width: max-content;
+  gap: 6px;
+}
+
+.transactionsArea__filterButtons button {
+  border-style: none;
+  border-radius: 8px;
+  height: 33px;
+  width: 70px;
+  background-color: #e9ecef;
+}
+
+#allTransactions {
+  width: 60px;
+  background-color: #fd377e;
+  color: white;
+}
+
+
+#allTransactions:hover {
+    background-color: #E34981;
+  }
+
+ul {
+  width: 100%;
+}
+
+li {
+  background-color: #f8f9fa;
+  display: flex;
+  width: 100%;
+  height: 90px;
+ padding-right: 20px;
+ margin-top: 20px;
+ border-radius: 8px;
+}
+
+
+li button {
+    margin-top: 12px;
+    width: 20px;
+    height: 20px;
+    border-style: none;
+  }
+
+
+  li span {
+    width: 70px;
+    margin-top: 12px;
+   
+  }
+
+
+.greenCard {
+  background-color: #03B898;
+  width: 5px;
+}
+
+.grayCard {
+  width: 5px;
+  background-color: #E9ECEF;
+}
+
+.transactionData {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-left: 20px;
+  
+}
+.transactionDescription {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+@media (min-width: 769px) {
+  section {
+    width: 36%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .transactionsArea {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .transactionsArea h2 {
+    width: 900%;
+  }
+}
