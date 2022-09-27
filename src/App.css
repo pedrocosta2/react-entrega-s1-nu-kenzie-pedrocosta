@@ -39,7 +39,8 @@ p {
 #homeImage {
   width: 90%;
   height: fit-content;
-  max-height: 66%;
+  max-height: 43%;
+  max-width: 60%;
 }
 
 #homeContent section img {
@@ -112,6 +113,7 @@ main div {
   #homeImage {
     width: fit-content;
     max-height: none;
+    
   }
 
   #homeImage img {

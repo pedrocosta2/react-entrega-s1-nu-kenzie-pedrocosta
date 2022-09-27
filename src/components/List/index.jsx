@@ -1,14 +1,17 @@
 import "./List.css";
 import deleteImg from "../../assets/trash.png";
+import { useState } from "react";
 let AppEntriesMenu = ({ listTransactions , setListTransactions }) => {
 
+  const [filteredItens, setFilteredItens] = useState([]);
+
+
+
+
+
 const deleteEntry = (obj) => {
-
 const newEntries = listTransactions.filter(element => element !== obj)
-
-
 setListTransactions(newEntries)
-
 }
 
 
@@ -18,9 +21,9 @@ setListTransactions(newEntries)
       <div className="transactionsArea">
         <h3>Resumo financeiro</h3>
         <div className="transactionsArea__filterButtons">
-          <button  id="allTransactions">Todos</button>
-          <button onClick={() =>  setListTransactions(listTransactions.filter(element => element.type === "entrada")) }>Entradas</button>
-          <button onClick={() =>  setListTransactions(listTransactions.filter(element => element.type === "saída")) }>Despesas</button>
+          <button  onClick={() =>  setFilteredItens([])}   id="allTransactions">Todos</button>
+          <button onClick={() =>  setFilteredItens(listTransactions.filter(element => element.type === "entrada")) }>Entradas</button>
+          <button onClick={() =>  setFilteredItens(listTransactions.filter(element => element.type === "saída")) }>Despesas</button>
         </div>
       </div>
 
@@ -29,8 +32,10 @@ setListTransactions(newEntries)
           <h2>Você ainda não possui nenhum lançamento</h2>
         ) : null}
 
+
+
         <ul>
-          {listTransactions.map((element, index) =>
+          { filteredItens.length === 0 ?    (listTransactions.map((element, index) =>
             element.type === "saída" ? (
               <li key={index}>
                 <div className="grayCard"></div>
@@ -58,7 +63,35 @@ setListTransactions(newEntries)
                 </div>
               </li>
             )
-          )}
+          )): (filteredItens.map((element, index) =>
+          element.type === "saída" ? (
+            <li key={index}>
+              <div className="grayCard"></div>
+
+              <div className="transactionData">
+                <div className="transactionDescription">
+                  <h3>{element.description}</h3>
+                  <span>{element.type}</span>
+                </div>
+
+                <span>R$ {element.value}</span>
+                <button onClick={() => deleteEntry(element)}> <img src={deleteImg} alt="" /></button>
+              </div>
+            </li>
+          ) : (
+            <li key={index}>
+              <div className="greenCard"></div>
+              <div className="transactionData">
+                <div className="transactionDescription">
+                  <h3>{element.description}</h3>
+                  <span>{element.type}</span>
+                </div>
+                <span>R$ {element.value}</span>
+                <button onClick={() => deleteEntry(element)}>  <img src={deleteImg} alt="" /></button>
+              </div>
+            </li>
+          )
+        ))}
         </ul>
       </div>
     </section>
